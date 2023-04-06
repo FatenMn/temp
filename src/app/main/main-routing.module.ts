@@ -4,7 +4,6 @@ import {Routes, RouterModule} from '@angular/router'
 import {LayoutComponent} from '../layout/default/layout.component'
 
 import {DashboardDefaultComponent} from "./dashboard/dashboard-default/dashboard-default.component"
-import {DashboardCryptoComponent} from "./dashboard/dashboard-crypto/dashboard-crypto.component"
 import {UserSettingsComponent} from "./user/user-settings/user-settings.component"
 import {UserLayoutComponent} from "./user/user-layout/user-layout.component"
 import {UserBillingComponent} from "./user/user-billing/user-billing.component"
@@ -53,15 +52,7 @@ const routeForPages = [
         data: {
           breadcrumb: 'Default'
         },
-      },
-     
-      {
-        path: 'crypto',
-        component: DashboardCryptoComponent,
-        data: {
-          breadcrumb: 'Stocks / Crypto'
-        },
-      },
+      }
     ],
   },
   

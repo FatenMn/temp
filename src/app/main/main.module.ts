@@ -7,7 +7,6 @@ import {AgGridModule} from '@ag-grid-community/angular'
 import {ChartsModule} from '../../@youpez'
 
 import {DashboardDefaultComponent} from './dashboard/dashboard-default/dashboard-default.component'
-import {DashboardCryptoComponent} from './dashboard/dashboard-crypto/dashboard-crypto.component'
 import {UserLayoutComponent} from './user/user-layout/user-layout.component'
 import {UserBillingComponent} from './user/user-billing/user-billing.component'
 import {UserCreditcardComponent} from './user/user-creditcard/user-creditcard.component'
@@ -26,7 +25,6 @@ import {MainRoutingModule} from './main-routing.module'
 @NgModule({
   declarations: [
     DashboardDefaultComponent,
-    DashboardCryptoComponent,
     UserLayoutComponent,
     UserBillingComponent,
     UserCreditcardComponent,
