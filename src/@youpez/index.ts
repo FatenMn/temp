@@ -1,7 +1,4 @@
 /** LAYOUT **/
-export {AppLayoutDividedComponent} from "./layout/auth/app-layout-divided/app-layout-divided.component"
-export {AppLayoutDividedAltComponent} from "./layout/auth/app-layout-divided-alt/app-layout-divided-alt.component"
-export {AppLayoutDividedFullComponent} from "./layout/auth/app-layout-divided-full/app-layout-divided-full.component"
 export {AppLayoutBasicComponent} from "./layout/auth/app-layout-basic/app-layout-basic.component"
 
 /** SERVICES **/
