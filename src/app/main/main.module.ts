@@ -21,6 +21,10 @@ import {WelcomeComponent} from './application/welcome/welcome.component'
 import {GettingStartedComponent} from './application/getting-started/getting-started.component'
 import {ChartsComponent} from './charts/charts.component'
 import {MainRoutingModule} from './main-routing.module'
+import { HttpClientModule } from '@angular/common/http';
+import { ListUtilisateurComponent } from './components/utilisateur/list-utilisateur/list-utilisateur.component';
+import { EditUtilisateurComponent } from './components/utilisateur/edit-utilisateur/edit-utilisateur.component';
+import { AddUtilisateurComponent } from './components/utilisateur/add-utilisateur/add-utilisateur.component'
 
 @NgModule({
   declarations: [
@@ -38,6 +42,9 @@ import {MainRoutingModule} from './main-routing.module'
     WelcomeComponent,
     GettingStartedComponent,
     ChartsComponent,
+    ListUtilisateurComponent,
+    EditUtilisateurComponent,
+    AddUtilisateurComponent,
   ],
   imports: [
     CommonModule,
@@ -46,7 +53,11 @@ import {MainRoutingModule} from './main-routing.module'
     SharedModule,
     ChartsModule,
     AgGridModule.withComponents([]),
-  ]
+    HttpClientModule,
+  ],
+
+  
+
 })
 export class MainModule {
 }

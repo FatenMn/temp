@@ -45,21 +45,7 @@ export class LayoutComponent implements OnInit, OnDestroy {
       
       ],
     },
-    {
-      groupName: 'APPLICATIONS',
-      opened: true,
-      children: [
-        {
-          name: 'Scrum board',
-
-          prefix: {
-            type: 'ibm-icon',
-            name: 'dashboardReference',
-          },
-          url: '/app/scrum-board',
-        }
-      ]
-    },
+    
     {
       groupName: 'PAGES',
       opened: true,
@@ -73,21 +59,12 @@ export class LayoutComponent implements OnInit, OnDestroy {
           },
           children: [
             {
-              name: 'Settings',
+              name: 'Gestion de profil',
               url: '/app/user/settings',
             },
-            {
-              name: 'Billing',
-              url: '/app/user/billing',
-            },
-            {
-              name: 'Creditcard',
-              url: '/app/user/creditcard',
-            },
-            {
-              name: 'Transactions',
-              url: '/app/user/transactions',
-            },
+           
+           
+            
           ]
         },
       
@@ -99,7 +76,7 @@ export class LayoutComponent implements OnInit, OnDestroy {
           },
           children: [
             {
-              name: 'Sign In',
+              name: 'Connecter',
               children: [
                 {
                   name: 'Style #4',
@@ -108,51 +85,23 @@ export class LayoutComponent implements OnInit, OnDestroy {
               ]
             },
             {
-              name: 'Sign Up',
+              name: 'Ajout compte',
               children: [
-                {
-                  name: 'Style #1',
-                  url: '/auth/modern/signup'
-                },
-                {
-                  name: 'Style #2',
-                  url: '/auth/full/signup'
-                },
-                {
-                  name: 'Style #3',
-                  url: '/auth/full-middle/signup'
-                },
+               
+              
+              
                 {
                   name: 'Style #4',
                   url: '/auth/basic/signup'
                 }
               ]
             },
-            {
-              name: 'Book a demo',
-              url: '/auth/book-a-demo',
-              suffix: {
-                type: 'badge',
-                level: 'danger',
-                text: 'HOT',
-              },
-            },
+           
             {
               name: 'Confirmation',
               url: '/auth/confirmation',
               children: [
-                {
-                  name: 'Style #1',
-                  url: '/auth/modern/confirmation'
-                },
-                {
-                  name: 'Style #2',
-                  url: '/auth/full/confirmation'
-                },
-                {
-                  name: 'Style #3',
-                  url: '/auth/full-middle/confirmation'
-                },
+                
                 {
                   name: 'Style #4',
                   url: '/auth/basic/confirmation'
@@ -161,20 +110,9 @@ export class LayoutComponent implements OnInit, OnDestroy {
             },
 
             {
-              name: 'Forgot password',
+              name: 'Mot passe oublie',
               children: [
-                {
-                  name: 'Style #1',
-                  url: '/auth/modern/forgot-password'
-                },
-                {
-                  name: 'Style #2',
-                  url: '/auth/full/forgot-password'
-                },
-                {
-                  name: 'Style #3',
-                  url: '/auth/full-middle/forgot-password'
-                },
+                
                 {
                   name: 'Style #4',
                   url: '/auth/basic/forgot-password'
@@ -184,18 +122,7 @@ export class LayoutComponent implements OnInit, OnDestroy {
             {
               name: 'Reset password',
               children: [
-                {
-                  name: 'Style #1',
-                  url: '/auth/modern/reset-password'
-                },
-                {
-                  name: 'Style #2',
-                  url: '/auth/full/reset-password'
-                },
-                {
-                  name: 'Style #3',
-                  url: '/auth/full-middle/reset-password'
-                },
+               
                 {
                   name: 'Style #4',
                   url: '/auth/basic/reset-password'
@@ -208,44 +135,7 @@ export class LayoutComponent implements OnInit, OnDestroy {
             },
           ]
         },
-        {
-          name: 'Invoice',
-          prefix: {
-            type: 'ibm-icon',
-            name: 'document',
-          },
-          url: '/app/invoice',
-        },
-        {
-          name: 'Search result',
-          prefix: {
-            type: 'ibm-icon',
-            name: 'imageSearch',
-          },
-          url: '/app/search-result',
-        },
-        {
-          name: 'Coming soon',
-          prefix: {
-            type: 'ibm-icon',
-            name: 'inProgress',
-
-          },
-          children: [
-            {
-              name: 'Style #4',
-              url: '/auth/coming-soon/basic'
-            }
-          ]
-        },
-        {
-          name: 'Maintenance',
-          prefix: {
-            type: 'ibm-icon',
-            name: 'hourglass',
-          },
-          url: '/app/maintenance',
-        },
+      
         {
           name: 'Errors',
           prefix: {
@@ -268,330 +158,10 @@ export class LayoutComponent implements OnInit, OnDestroy {
             },
           ]
         },
-        {
-          name: 'Starters',
-          parentUrl: '/app/starters',
-          prefix: {
-            type: 'ibm-icon',
-            name: '3dCursorAlt',
-          },
-          children: [
-            {
-              name: 'Full width',
-              parentUrl: '/app/starters/full-width',
-              children: [
-                {
-                  name: 'Basic',
-                  url: '/app/starters/full-width/basic'
-                },
-                {
-                  name: 'Header',
-                  url: '/app/starters/full-width/header'
-                },
-                {
-                  name: 'Tabs',
-                  url: '/app/starters/full-width/tabs'
-                }
-              ]
-            },
-            {
-              name: 'Left sidebar',
-              parentUrl: '/app/starters/left-sidebar',
-              children: [
-                {
-                  name: 'Basic',
-                  url: '/app/starters/left-sidebar/basic'
-                },
-                {
-                  name: 'Header',
-                  url: '/app/starters/left-sidebar/header'
-                },
-                {
-                  name: 'Tabs',
-                  url: '/app/starters/left-sidebar/tabs'
-                }
-              ]
-            },
-            {
-              name: 'Right sidebar',
-              parentUrl: '/app/starters/right-sidebar',
-              children: [
-                {
-                  name: 'Basic',
-                  url: '/app/starters/right-sidebar/basic'
-                },
-                {
-                  name: 'Header',
-                  url: '/app/starters/right-sidebar/header'
-                },
-                {
-                  name: 'Tabs',
-                  url: '/app/starters/right-sidebar/tabs'
-                }
-              ]
-            },
-            {
-              name: 'Application',
-              parentUrl: '/app/starters/application',
-              children: [
-                {
-                  name: 'Basic',
-                  url: '/app/starters/application/basic'
-                },
-                {
-                  name: 'Advanced',
-                  url: '/app/starters/application/advanced'
-                },
-                {
-                  name: 'Complex',
-                  url: '/app/starters/application/complex'
-                }
-              ]
-            },
-          ]
-        }
+       
       ]
     },
-    {
-      groupName: 'Components',
-      opened: true,
-      children: [
-        {
-          name: 'UI components',
-          url: '/app/ui-components',
-          prefix: {
-            type: 'ibm-icon',
-            name: 'view',
-          },
-        },
-        {
-          name: 'Widgets',
-          prefix: {
-            type: 'ibm-icon',
-            name: 'phraseSentiment',
-          },
-          parentUrl: '/app/widgets',
-          children: [
-            {
-              name: 'General',
-              url: '/app/widgets/general',
-              suffix: {
-                type: 'badge',
-                level: 'default',
-                text: '!',
-              },
-            },
-            {
-              name: 'Cards',
-              url: '/app/widgets/cards',
-            },
-            {
-              name: 'Lists',
-              url: '/app/widgets/lists',
-            },
-          ]
-        },
-        {
-          name: 'Tables',
-          parentUrl: '/app/tables',
-          prefix: {
-            type: 'ibm-icon',
-            name: 'tableSplit',
-          },
-          children: [
-            {
-              name: 'Basic',
-              url: '/app/tables/basic',
-            },
-            {
-              name: 'Advanced',
-              url: '/app/tables/advanced',
-            },
-            {
-              name: 'Full Datagrid',
-              url: '/app/tables/full',
-              suffix: {
-                type: 'badge',
-                level: 'danger',
-                text: 'HOT',
-              },
-            },
-          ]
-        },
-        {
-          name: 'Forms',
-          prefix: {
-            type: 'ibm-icon',
-            name: 'textCreation',
-          },
-          parentUrl: '/app/forms',
-          children: [
-            {
-              name: 'General',
-              url: '/app/forms/general',
-            },
-            {
-              name: 'Advanced',
-              url: '/app/forms/advanced',
-            },
-            {
-              name: 'Validation & Layouts',
-              url: '/app/forms/validation',
-            },
-            {
-              name: 'Wizard',
-              url: '/app/forms/wizard',
-            },
-          ]
-        },
-        {
-          name: 'Charts',
-          url: '/app/charts',
-          prefix: {
-            type: 'ibm-icon',
-            name: 'chartColumn',
-          },
-        },
-        {
-          name: 'Icons',
-          url: '/app/icons',
-          prefix: {
-            type: 'ibm-icon',
-            name: 'magicWand',
-          },
-        },
-        {
-          name: 'Typography',
-          url: '/app/typography',
-          prefix: {
-            type: 'ibm-icon',
-            name: 'textTracking',
-          },
-        }
-      ]
-    },
-    {
-      groupName: 'Menu features',
-      opened: true,
-      children: [
-        {
-          name: 'Badge number',
-          prefix: {
-            type: 'ibm-icon',
-            name: 'home',
-          },
-          suffix: {
-            type: 'badge',
-            level: 'danger',
-            text: 2,
-          },
-        },
-        {
-          name: 'Badge text',
-          prefix: {
-            type: 'ibm-icon',
-            name: 'home',
-          },
-          suffix: {
-            type: 'badge',
-            level: 'success',
-            text: 'Updated',
-
-          },
-        },
-        {
-          name: 'Disabled Item',
-          disabled: true,
-          prefix: {
-            type: 'ibm-icon',
-            name: 'home',
-          },
-        },
-        {
-          name: 'Disabled Group',
-          disabled: true,
-          prefix: {
-            type: 'ibm-icon',
-            name: 'home',
-          },
-          children: []
-        },
-        {
-          name: 'Disabled Subitem',
-          prefix: {
-            type: 'ibm-icon',
-            name: 'home',
-          },
-          children: [
-            {
-              name: 'Disabled Item',
-              disabled: true,
-            }
-          ]
-        },
-        {
-          name: 'Looooong Menu item, with loooong menu item',
-          prefix: {
-            type: 'ibm-icon',
-            name: 'home',
-          },
-        },
-        {
-          name: 'Menu item',
-          subtitle: 'with subtitle',
-          prefix: {
-            type: 'ibm-icon',
-            name: 'home',
-          },
-          children: [
-            {
-              name: 'Subitem',
-            },
-          ]
-        },
-        {
-          name: 'Menu item',
-          subtitle: 'with subtitle',
-          prefix: {
-            type: 'ibm-icon',
-            name: 'home',
-          },
-        },
-        {
-          name: 'Menu item',
-          subtitle: 'with long subtitle, with long subtitle, with log subtitle',
-          prefix: {
-            type: 'ibm-icon',
-            name: 'home',
-          },
-        },
-      ]
-    },
-    {
-      groupName: 'iconless features ',
-      opened: true,
-      children: [
-        {
-          name: 'Iconless111111',
-        },
-        {
-          name: 'Iconless badge',
-          suffix: {
-            type: 'badge',
-            level: 'danger',
-            text: 'Deleted',
-          },
-        },
-        {
-          name: 'Iconless sub',
-          children: [
-            {
-              name: 'Sub item',
-            }
-          ]
-        },
-      ]
-    }
+   
   ]
 
   constructor(private settingsService: SettingsService,
