@@ -4,7 +4,17 @@
 
 export const environment = {
   production: false,
+  base_url: "http://localhost:8081/api/v1/",
+
+};
+
+export const url =
+{
+ 
+  url_user: environment.base_url + 'utilisateur/',
 }
+
+
 
 /*
  * For easier debugging in development mode, you can import the following file

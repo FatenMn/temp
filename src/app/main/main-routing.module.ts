@@ -18,6 +18,7 @@ import {ChangelogComponent} from "./application/changelog/changelog.component"
 import {WelcomeComponent} from "./application/welcome/welcome.component"
 import {GettingStartedComponent} from "./application/getting-started/getting-started.component"
 import {ChartsComponent} from "./charts/charts.component"
+import { ListUtilisateurComponent } from './components/utilisateur/list-utilisateur/list-utilisateur.component'
 
 const starterPages = [
   {
@@ -76,89 +77,25 @@ const routeForPages = [
       breadcrumb: 'User'
     },
     children: [
-      {
+    /*  {
         path: 'settings',
         component: UserSettingsComponent,
-        data: {
-          breadcrumb: 'Settings'
-        },
+       
       },
+     */
       {
-        path: 'billing',
-        component: UserBillingComponent,
-        data: {
-          breadcrumb: 'Billing'
-        },
+        path: 'listUsers',
+        component: ListUtilisateurComponent,
+ 
       },
-      {
-        path: 'creditcard',
-        component: UserCreditcardComponent,
-        data: {
-          breadcrumb: 'Creditcard'
-        },
-      },
-      {
-        path: 'transactions',
-        component: UserTransactionsComponent,
-        data: {
-          breadcrumb: 'Transactions'
-        },
-      },
+      
     ]
   },
-  {
-    path: 'application',
-    data: {
-      breadcrumb: 'Application'
-    },
-    children: [
-      {
-        path: 'welcome',
-        component: WelcomeComponent,
-        data: {
-          breadcrumb: 'Welcome'
-        },
-      },
-      {
-        path: 'getting-started',
-        component: GettingStartedComponent,
-        data: {
-          breadcrumb: 'Getting started'
-        },
-      },
-      {
-        path: 'faq',
-        component: FaqComponent,
-        data: {
-          breadcrumb: 'FAQ'
-        },
-      },
-      {
-        path: 'manual',
-        component: ManualComponent,
-        data: {
-          breadcrumb: 'Manual'
-        },
-      },
-      {
-        path: 'support',
-        component: SupportComponent,
-        data: {
-          breadcrumb: 'Support'
-        },
-      },
-      {
-        path: 'changelog',
-        component: ChangelogComponent,
-        data: {
-          breadcrumb: 'Changelog'
-        },
-      },
-    ]
-  },
+  
   {
     path: '**',
-    redirectTo: '/app/dashboard/default',
+    //redirectTo: '/app/dashboard/default',
+    redirectTo: '/app/auth/basic/signin',
     pathMatch: 'full',
   },
 ]
