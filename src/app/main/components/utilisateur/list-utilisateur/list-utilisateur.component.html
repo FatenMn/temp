@@ -1,29 +1,41 @@
-<table id="myTable" datatable  class="table table-striped table-bordered table-hover">
-    <thead>
-        <tr>
-            <th>id </th>
-            <th>Années de Base</th>
 
-            <th style="width: 0%;">Action</th>
+<button ibmButton="primary" size="sm" (click)="openDialogadd()">
+    Ajouter un nouveau utilisateur
+    <svg class="bx--btn__icon" ibmIconAdd size="20"></svg>
+  </button>
+
+
+<table class="app-table mb-32 w-full">
+    <thead>
+        <tr class="app-body-short-01 app-table__header">
+            <th class="pr-4 py-2 text-left font-bold">id </th>
+            <th class="pr-4 py-2 text-left font-bold">Nom</th>
+            <th class="pr-4 py-2 text-left font-bold">Prenom</th>
+            <th class="pr-4 py-2 text-left font-bold">Email</th>
+            <th class="pr-4 py-2 text-left font-bold">Telephone</th>
+            <th class="pr-4 py-2 text-left font-bold">Adresse</th>
+            <th class="pr-4 py-2 text-left font-bold">Actions</th>
+
         </tr>
     </thead>
     <tbody>
-        <tr  *ngFor="let item of users;let i=index">
-   
+        <tr class="app-body-short-01 app-table__row" *ngFor="let item of users;let i=index">
+
             <td>{{item.id}}</td>
+            <td>{{item.nom}}</td>
+            <td>{{item.prenom}}</td>
+            <td>{{item.email}}</td>
+            <td>{{item.numtel}}</td>
+            <td>{{item.adresse}}</td>
+
             <td>
-               
+                <button type="button" (click)="delete(item.id)">
+                    <youpez-ibm-icon iconSize="20" iconName="trashCan" class="mr-2"></youpez-ibm-icon>
+                </button>
             </td>
+
         </tr>
 
     </tbody>
-    <tfoot>
-        <tr>
-            <th>Code Version </th>
-            <th>Années de Base</th>
 
-            <th style="width: 0%;">Action</th>
-        </tr>
-
-    </tfoot>
 </table>

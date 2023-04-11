@@ -48,8 +48,10 @@
     "ngx-md": "^8.1.6",
     "ngx-router-animations": "0.0.9",
     "ngx-scrollbar": "^7.5.3",
+    "ngx-toastr": "^11.1.0",
     "random-avatar-generator": "^2.0.0",
     "rxjs": "~6.5.5",
+    "sweetalert2": "^11.7.3",
     "tslib": "^2.1.0",
     "unique-names-generator": "^4.3.1",
     "zone.js": "~0.10.3"

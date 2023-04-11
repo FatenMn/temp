@@ -1,9 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
 import { ApiResponse } from '@youpez/api-response';
-import { TableModel } from 'carbon-components-angular';
 import { Utilisateur } from 'src/app/main/models/utilisateur'
 import { UtilisateurService } from 'src/app/main/services/utilisateur.service'
+import Swal from 'sweetalert2';
+import {NotificationService} from "carbon-components-angular"
+import { AddUtilisateurComponent } from '../add-utilisateur/add-utilisateur.component';
+import { MatDialog } from '@angular/material/dialog';
 
 
 
@@ -18,8 +20,10 @@ export class ListUtilisateurComponent implements OnInit {
 
   constructor(
   //  public dialog: MatDialog,
-    //public toastr: ToastrService,
+   // public toastr: ToastrService,
     public utilisateurService: UtilisateurService,
+    private notificationService: NotificationService,
+    public dialog: MatDialog,
   ) {
   }
 
@@ -33,7 +37,7 @@ export class ListUtilisateurComponent implements OnInit {
     this.utilisateurService.getAll().subscribe((res: ApiResponse<Utilisateur>) => {
 
       this.users = res.data.map((item: Utilisateur) => Utilisateur.fromJson(item));
-
+      console.log('users######### ',this.users);
     })
 
   }
@@ -56,5 +60,70 @@ export class ListUtilisateurComponent implements OnInit {
     }).afterClosed().subscribe(result => { })
   }*/
 
+////////////////////////////////////////////////////////////
+delete(id:any) {
 
+  Swal.fire({ //Show Popup Confirmation
+
+    /************************************************************ Popup Settings  */
+    title: 'Attention',
+    text:  'Voulez-vous supprimer ce utilisateur ?',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    cancelButtonText: 'Non',
+    confirmButtonText: 'Oui'
+    /************************************************************ Popup Result  */
+
+  }).then((result) => {
+    if (result.isConfirmed) { /***> If Confirmed  **/
+
+    this.utilisateurService.delete(id).subscribe(
+      (res: ApiResponse<Utilisateur>) => {
+
+        if (res.status == '200') {
+          this.notificationService.showToast({
+            type: "info",
+            title: "",
+            subtitle: "",
+            caption: "utilisateur supprime avec succes",
+            target: "#notificationHolder",
+            message: "message",
+            duration: 20000,
+          })
+          }
+        
+        else {
+          this.notificationService.showToast({
+            type: "error",
+            title: "",
+            subtitle: "",
+            caption: "erroooooooooooooor",
+            target: "#notificationHolder",
+            message: "message",
+            duration: 20000,
+          })
+          } 
+      
+        this.getAll();
+
+      },
+      (err) => {
+        console.log(err);
+        //this.toastr.error('Error');
+      }
+         );     
+    }
+  })
+ 
+}
+/////////////////////////////////////////////
+openDialogadd() {
+  return this.dialog.open(AddUtilisateurComponent, {
+    width: '1000px',
+    panelClass: 'confirm-dialog-container',
+    disableClose: true,
+  }).afterClosed().subscribe(result => { this.getAll(); });
+}
 }
