@@ -15,7 +15,9 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: '/auth/basic/signin',
+   // redirectTo: '/auth/basic/signin',
+    redirectTo: '/app/dashboard',
+
     pathMatch: 'full',
   },
 ]

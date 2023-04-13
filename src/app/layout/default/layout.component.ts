@@ -134,6 +134,7 @@ export class LayoutComponent implements OnInit, OnDestroy {
               callback: 'lock',
             },
           ]
+          
         },
       
         {
@@ -158,7 +159,51 @@ export class LayoutComponent implements OnInit, OnDestroy {
             },
           ]
         },
+        {
+          name: 'Tables',
+          parentUrl: '/app/tables',
+          prefix: {
+            type: 'ibm-icon',
+            name: 'tableSplit',
+          },
+          children: [
+            {
+              name: 'Basic',
+              url: '/app/tables/basic',
+            },
+           
+          ]
+        },
        
+
+
+        //
+        {
+          name: 'Gestion Utilisateur',
+          parentUrl: '/app/main/composants/utilisateur',
+          prefix: {
+            type: 'ibm-icon',
+            name: 'tableSplit',
+          },
+          children: [
+            {
+              name: 'ajouter user',
+              url: '/app/main/composants.utilisateur/addutilisateur',
+            },
+
+
+            {
+              name: 'liste des utilisateurs',
+              url: '/app/main/composants.utilisateur/listutilisateur',
+            },
+           
+          ]
+        },
+
+
+
+        //
+
       ]
     },
    

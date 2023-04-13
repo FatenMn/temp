@@ -12,6 +12,7 @@ export const url =
 {
  
   url_user: environment.base_url + 'utilisateur/',
+  url_compte: environment.base_url + 'compte/',
 }
 
 
