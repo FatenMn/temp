@@ -29,8 +29,14 @@
             <td>{{item.adresse}}</td>
 
             <td>
-                <button type="button" (click)="delete(item.id)">
+                <button type="button" [disabled]="item.compte.active==0" (click)="delete(item.id)">
                     <youpez-ibm-icon iconSize="20" iconName="trashCan" class="mr-2"></youpez-ibm-icon>
+                </button>
+                <button type="button" [disabled]="item.compte.active==1" (click)="activateAccount(item.compte.id)">
+                    <youpez-ibm-icon iconSize="20" iconName="settingsAdjust" class="mr-2"></youpez-ibm-icon>
+                </button>
+                <button type="button" [disabled]="item.compte.active==0" (click)="desactivateAccount(item.compte.id)">
+                    <youpez-ibm-icon iconSize="20" iconName="search" class="mr-2"></youpez-ibm-icon>
                 </button>
             </td>
 

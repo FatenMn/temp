@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ApiResponse } from '@youpez/api-response';
 import { Utilisateur } from 'src/app/main/models/utilisateur'
 import { UtilisateurService } from 'src/app/main/services/utilisateur.service'
+import { CompteService } from 'src/app/main/services/compte.service'
 import Swal from 'sweetalert2';
 import {NotificationService} from "carbon-components-angular"
 import { AddUtilisateurComponent } from '../add-utilisateur/add-utilisateur.component';
@@ -22,7 +23,8 @@ export class ListUtilisateurComponent implements OnInit {
   //  public dialog: MatDialog,
    // public toastr: ToastrService,
     public utilisateurService: UtilisateurService,
-    private notificationService: NotificationService,
+    public notificationService: NotificationService,
+    public compteService:CompteService,
     public dialog: MatDialog,
   ) {
   }
@@ -126,4 +128,123 @@ openDialogadd() {
     disableClose: true,
   }).afterClosed().subscribe(result => { this.getAll(); });
 }
+/////////////////////////////////
+////////////////////////////////////////////////////////////
+activateAccount(id:any) {
+
+  Swal.fire({ //Show Popup Confirmation
+
+    /************************************************************ Popup Settings  */
+    title: 'Attention',
+    text:  'Voulez-vous activer ce utilisateur ?',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    cancelButtonText: 'Non',
+    confirmButtonText: 'Oui'
+    /************************************************************ Popup Result  */
+
+  }).then((result) => {
+    if (result.isConfirmed) { /***> If Confirmed  **/
+
+    this.compteService.activateAccount(id).subscribe(
+      (res: ApiResponse<Utilisateur>) => {
+
+        if (res.status == '200') {
+          this.notificationService.showToast({
+            type: "info",
+            title: "",
+            subtitle: "",
+            caption: "compte avec succes",
+            target: "#notificationHolder",
+            message: "message",
+            duration: 20000,
+          })
+          }
+        
+        else {
+          this.notificationService.showToast({
+            type: "error",
+            title: "",
+            subtitle: "",
+            caption: "erroooooooooooooor",
+            target: "#notificationHolder",
+            message: "message",
+            duration: 20000,
+          })
+          } 
+      
+        this.getAll();
+
+      },
+      (err) => {
+        console.log(err);
+        //this.toastr.error('Error');
+      }
+         );     
+    }
+  })
+ 
+}
+
+desactivateAccount(id:any) {
+
+  Swal.fire({ //Show Popup Confirmation
+
+    /************************************************************ Popup Settings  */
+    title: 'Attention',
+    text:  'Voulez-vous activer ce utilisateur ?',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    cancelButtonText: 'Non',
+    confirmButtonText: 'Oui'
+    /************************************************************ Popup Result  */
+
+  }).then((result) => {
+    if (result.isConfirmed) { /***> If Confirmed  **/
+
+    this.compteService.desactivateAccount(id).subscribe(
+      (res: ApiResponse<Utilisateur>) => {
+
+        if (res.status == '200') {
+          this.notificationService.showToast({
+            type: "info",
+            title: "",
+            subtitle: "",
+            caption: "compte avec succes",
+            target: "#notificationHolder",
+            message: "message",
+            duration: 20000,
+          })
+          }
+        
+        else {
+          this.notificationService.showToast({
+            type: "error",
+            title: "",
+            subtitle: "",
+            caption: "erroooooooooooooor",
+            target: "#notificationHolder",
+            message: "message",
+            duration: 20000,
+          })
+          } 
+      
+        this.getAll();
+
+      },
+      (err) => {
+        console.log(err);
+        //this.toastr.error('Error');
+      }
+         );     
+    }
+  })
+ 
+}
+
+
 }

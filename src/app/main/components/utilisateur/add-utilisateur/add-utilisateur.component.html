@@ -1,13 +1,93 @@
-<div fxFlex="100%" fxFlex.gt-md="33.33%">
+<div fxFlex="100%" fxFlex.gt-md="80%">
     <div class="app-card app-card--select">
       <div class="app-card__header app-bg-decorative app-text-contrast">
         Ajouter utilisateur
       </div>
       <div class="app-card__content app-bg-decorative-lt-10 app-text-contrast _app-card-min-height">
-        <div class="app-productive-heading-03 mb-1">
-          Content title
+        <div class="mb-8" fxHide fxShow.lt-md>
+          <youpez-logo class="cursor-pointer" logoWidth="130px"></youpez-logo>
         </div>
-     
+        <h1 class="app-expressive-heading-06 mb-1">Ajout noveau compte utilisateur </h1>
+        <div class="app-body-long-02 mb-8">
+          
+          <!--a ibmLink routerLink="../signin">Sign in</a-->
+        </div>
+        <form [formGroup]="addform">
+          <div class="app-form">
+            <div fxLayout="row" class="app-form__row">
+              <div fxFlex="50">
+                <div class="app-form__item">
+                  <ibm-label
+                    [helperText]="''"
+                    [invalid]="isValid('nom')"
+                    [invalidText]="'Ce champ est obligatoire'">
+                   Nom utilisateur
+                    <input
+                      formControlName="nom"
+                      ibmText
+                      size="md"
+                      [invalid]="isValid('nom')"
+                      [disabled]="false"
+                      theme="light"
+                      [placeholder]="'Nom utilisateur'"
+                      [autocomplete]="true">
+                  </ibm-label>
+                </div>
+              </div>
+              <div fxFlex="50">
+                <div class="app-form__item">
+                  <ibm-label
+                    [helperText]="''"
+                    [invalid]="isValid('prenom')"
+                    [invalidText]="'Ce champ est obligatoire'">
+                    Prenom utilisateur
+                    <input
+                      formControlName="prenom"
+                      ibmText
+                      size="md"
+                      [invalid]="isValid('prenom')"
+                      [disabled]="false"
+                      theme="light"
+                      [placeholder]="'Prenom utilisateur'"
+                      [autocomplete]="true">
+                  </ibm-label>
+                </div>
+              </div>
+            </div>
+            <div class="app-form__item">
+              <ibm-label
+                [helperText]="''"
+                [invalid]="isValid('email')"
+                [invalidText]="'Ce champ est obligatoire'">
+                Adresse Email
+                <input
+                  formControlName="email"
+                  ibmText
+                  size="md"
+                  [invalid]="isValid('email')"
+                  [disabled]="false"
+                  theme="light"
+                  [placeholder]="'Adresse Email'"
+                  [autocomplete]="true">
+              </ibm-label>
+            </div>
+          
+            <div class="app-form__item app-form__item--opts">
+              <div class="flex justify-between items-center">
+                <!--ibm-checkbox formControlName="condition">
+                  I have read and accept
+                  <a class="app-link">terms & conditions</a>
+                </ibm-checkbox-->
+              </div>
+            </div>
+            <div class="app-form__submit">
+              <button  (click)="Add()" class="app-ibm-btn-full" ibmButton="primary" size="field">
+                Creer un compte 
+                <svg class="bx--btn__icon" ibmIconArrowRight size="20"></svg>
+              </button>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   </div>

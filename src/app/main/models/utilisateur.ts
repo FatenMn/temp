@@ -1,3 +1,5 @@
+import { Compte } from "./compte";
+
 export  class Utilisateur {
     
         public static fromJson(json: any): Utilisateur {
@@ -8,7 +10,8 @@ export  class Utilisateur {
                 json['email'],  
                 json['Numtel'],
                 json['sexe'],           
-                json['adresse'],       
+                json['adresse'],   
+                json['compte'],    
        
                 );
         }
@@ -19,8 +22,8 @@ export  class Utilisateur {
                     public email:String, 
                     public numtel:number, 
                     public sexe:String,
-                    public adresse:String
-
+                    public adresse:String,
+                    public compte:Compte
                     )
                     { }
     }
